@@ -25,8 +25,24 @@ export class DragonballPageComponent {
 
  ]);
 
- addCharacter() {
+   addCharacter() {
+     if ( !this.name() || !this.power() || this.power() <= 0 ){
+      return
+       }
+    const newCharacter: ChacacterArrarN = {
+      id: this.characters().length + 1,
+      name: this.name(),
+      power: this.power()
+     }
+       this.characters.update(
+         (list) => [...list, newCharacter]);
+     this.resetField();
 
+     }
+
+     resetField(){
+      this.name.set('');
+      this.power.set(0);
      }
 
 
