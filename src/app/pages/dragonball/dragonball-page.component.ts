@@ -1,10 +1,7 @@
 import { Component, signal } from '@angular/core';
+import { ChacacterArrarN } from '../../interfaz/character.interface';
 
- interface ChacacterArrarN{
-  id: number;
-  name: string;
-  power: number;
- }
+
 
 @Component({
   selector: 'app-dragonball-page',
