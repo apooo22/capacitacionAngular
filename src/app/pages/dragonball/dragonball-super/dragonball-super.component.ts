@@ -1,10 +1,11 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { DragonballListComponent } from "../dragonball-list/dragonball-list.component";
 import { ChacacterArrarN } from '../../../interfaz/character.interface';
+import { DragolballAddComponent } from "../dragolball-add/dragolball-add.component";
 
 @Component({
   selector: 'app-dragonball-super',
-  imports: [DragonballListComponent],
+  imports: [DragonballListComponent, DragolballAddComponent],
   templateUrl: './dragonball-super.component.html',
 
 })
@@ -22,18 +23,12 @@ export class DragonballSuperComponent {
 
  ]);
 
- addCharacter() {
-  if(!this.name() || !this.power()  || this.power() <= 0){
-    return
+ addCharacter(character: ChacacterArrarN) {
+   this.characters.update(
+      list => [...list, character]
+   )
  }
- const newCharater: ChacacterArrarN ={
-   id: this.characters().length + 1,
-   name: this.name(),
-   power: this.power(),
- }
- this.characters.update((list) => [...list, newCharater]);
- this.resetFields();
- }
+
         resetFields(){
           this.name.set('');
           this.power.set(0);

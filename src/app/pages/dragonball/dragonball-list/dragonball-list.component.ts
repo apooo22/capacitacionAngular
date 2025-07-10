@@ -11,5 +11,6 @@ export class DragonballListComponent {
 
 
   characters = input.required<ChacacterArrarN[]>();
+  listName = input.required<string>();
 
 }

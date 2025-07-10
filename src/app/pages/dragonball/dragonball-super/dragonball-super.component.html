@@ -1,6 +1,22 @@
 <p>dragonball-super worksccccccccccccccccccccccccccccccccc!</p>
 
+<section class="row">
 
-<app-dragonball-list
-listName="Listado de Personajes"
-[characters]="characters()"/>
+  <div class="col-12 col-sm-6">
+
+    <dragolball-character-add
+      (newCharacter)="addCharacter($event)"
+    />
+
+  </div>
+
+  <div class="col-12 col-sm-6">
+
+
+  <app-dragonball-list
+    listName="Listado de Personajes Padre"
+    [characters]="characters()"/>
+
+</div>
+
+</section>
